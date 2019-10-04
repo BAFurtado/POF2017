@@ -5,4 +5,4 @@ https://www.ibge.gov.br/estatisticas/sociais/populacao/24786-pesquisa-de-orcamen
 
 * Máxima desagregação classe (alimentação), por faixa de renda, urbano x rural por UF
 
-* Awaing microdata
+* Awaiting microdata
