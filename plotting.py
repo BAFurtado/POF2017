@@ -27,10 +27,13 @@ def plot_hist(d, col_num=0):
     ax.set(xlabel='UFs', ylabel='R$ (2018)', title=o['DF'].loc[col_num, 'name'])
     ax.tick_params(labelsize=8)
     ax.yaxis.set_major_formatter(StrMethodFormatter('{x:,.0f}'))
-    plt.show()
+    d['DF'].name = d['DF'].name.str.replace('/', '_')
+    fig.savefig('graphs/' + d['DF'].name.iloc[col_num])
+    plt.close(fig)
 
 
 if __name__ == '__main__':
     p = r'\\storage6\usuarios\# BERNARDO ALVES FURTADO #\POF2017\Originais'
     o = unpacking_reading.read_ufs(p)
-    plot_hist(o)
+    for i in range(95):
+        plot_hist(o, i)

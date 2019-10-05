@@ -28,7 +28,7 @@ def read_ufs(path):
     for i in files:
         if re.match(pattern, i):
             uf = ufs.loc[ufs['nummun'] == int(i[:2]), 'codmun'].iloc[0]
-            output[uf] = pd.read_excel(os.path.join(path, i), header=7, names=cols,
+            output[uf] = pd.read_excel(os.path.join(path, i), header=7, names=cols, encoding='latin-1',
                               skiprows=[61, 62, 63, 64, 65, 66, 67, 68, 69, 70], skipfooter=7, na_values='-')
     return output
 
