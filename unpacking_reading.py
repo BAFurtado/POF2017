@@ -22,7 +22,7 @@ def retrieve(path):
 def read_ufs(path):
     output = dict()
     files = os.listdir(path)
-    cols = ['name', 'tot', 1, 2, 3, 4, 5, 6, 7]
+    cols = ['name', 'total', 'classe 1', 'classe 2', 'classev3', 'classe 4', 'classe 5', 'classe 6', 'classe 7']
     pattern = r'\d\d'
     ufs = pd.read_csv('ufs_ids.csv', sep=';')
     for i in files:
@@ -36,6 +36,6 @@ def read_ufs(path):
 if __name__ == '__main__':
     p = r'originais/'
     # retrieve(p)
-    # o = read_ufs(p)
+    o = read_ufs(p)
     # for key in o.keys():
     #     print(o[key].head(2))
