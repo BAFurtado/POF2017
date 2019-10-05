@@ -34,8 +34,8 @@ def read_ufs(path):
 
 
 if __name__ == '__main__':
-    p = r'\\storage6\usuarios\# BERNARDO ALVES FURTADO #\POF2017\Originais'
+    p = r'originais/'
     # retrieve(p)
-    o = read_ufs(p)
-    for key in o.keys():
-        print(o[key].head(2))
+    # o = read_ufs(p)
+    # for key in o.keys():
+    #     print(o[key].head(2))

@@ -33,7 +33,7 @@ def plot_hist(d, col_num=0):
 
 
 if __name__ == '__main__':
-    p = r'\\storage6\usuarios\# BERNARDO ALVES FURTADO #\POF2017\Originais'
+    p = r'originais/'
     o = unpacking_reading.read_ufs(p)
     for i in range(95):
         plot_hist(o, i)
