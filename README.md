@@ -3,6 +3,8 @@ https://www.ibge.gov.br/estatisticas/sociais/populacao/24786-pesquisa-de-orcamen
 
 ### Just reading some tables
 
+### Gráficos por UFs da POF 2017 Despesas -- veja pasta GRAPHS
+
 * Máxima desagregação classe (alimentação), por faixa de renda, urbano x rural por UF
 
 * Awaiting microdata
