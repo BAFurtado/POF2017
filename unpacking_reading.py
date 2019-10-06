@@ -13,15 +13,15 @@ def retrieve(path):
         with zipfile.ZipFile(os.path.join(path, f), 'r') as zip_ref:
             zip_ref.extractall(path)
 
-#
-# def state_string(state, states_codes):
-#     state_id = states_codes.loc[states_codes['codmun'] == state]['nummun']
-#     return str(state_id.iloc[0])
-
 
 def read_despesas(path, file, cols):
     return pd.read_excel(os.path.join(path, file), header=7, names=cols, encoding='latin-1',
                          skiprows=[61, 62, 63, 64, 65, 66, 67, 68, 69, 70], skipfooter=7, na_values='-')
+
+
+def read_rendimentos(path, file, cols):
+    return pd.read_excel(os.path.join(path, file), sheet_name=4, header=10, names=cols, encoding='latin-1',
+                         skipfooter=5, na_values='-', skiprows=[11, 13])
 
 
 def read_ufs(path):
@@ -34,6 +34,7 @@ def read_ufs(path):
         if re.match(pattern, file):
             uf = ufs.loc[ufs['nummun'] == int(file[:2]), 'codmun'].iloc[0]
             output[uf] = read_despesas(path, file, cols)
+            output[uf] = pd.concat([output[uf], read_rendimentos(path, file, cols)])
     return output
 
 
@@ -43,3 +44,5 @@ if __name__ == '__main__':
     o = read_ufs(p)
     for key in o.keys():
         print(o[key].head(2))
+        print(o[key].tail(2))
+
