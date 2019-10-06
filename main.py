@@ -4,8 +4,7 @@ import unpacking_reading
 
 def main(path, decil, color):
     dic = unpacking_reading.read_ufs(path)
-    # Gráficos de despesa 95
-    for i in range(95):
+    for i in range(len(dic[color])):
         plotting.plot_hist(dic, decil, color, i)
 
 

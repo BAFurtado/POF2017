@@ -1,6 +1,3 @@
-import operator
-from collections import OrderedDict
-
 import matplotlib.pyplot as plt
 from matplotlib.ticker import StrMethodFormatter
 
@@ -37,6 +34,7 @@ if __name__ == '__main__':
     p = r'originais/'
     o = unpacking_reading.read_ufs(p)
     color_uf = 'DF'
+    # Choose classes 'total', 'classe 1', 'classe 2', 'classev3', 'classe 4', 'classe 5', 'classe 6', 'classe 7'
     dec = 'classe 7'
-    for i in range(95):
+    for i in range(len(o[color_uf])):
         plot_hist(o, dec, color_uf, i)

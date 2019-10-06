@@ -34,7 +34,7 @@ def read_ufs(path):
         if re.match(pattern, file):
             uf = ufs.loc[ufs['nummun'] == int(file[:2]), 'codmun'].iloc[0]
             output[uf] = read_despesas(path, file, cols)
-            output[uf] = pd.concat([output[uf], read_rendimentos(path, file, cols)])
+            output[uf] = pd.concat([output[uf], read_rendimentos(path, file, cols)], ignore_index=True)
     return output
 
 
@@ -45,4 +45,3 @@ if __name__ == '__main__':
     for key in o.keys():
         print(o[key].head(2))
         print(o[key].tail(2))
-
